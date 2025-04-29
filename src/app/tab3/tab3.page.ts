@@ -8,14 +8,20 @@ import { PhotoService } from "../services/photo.service";
   standalone: false,
 })
 export class Tab3Page {
+  
+  showPhotos=false;
 
   constructor(public photoService:PhotoService) {}
-    addPhotoToGallery(){
-      this.photoService.addNewToGallery();
-      
-    }
     async ngOnInit() {
       await this.photoService.loadSaved();
-    }
+    }  
+    mostrarPhotos() {
+      this.showPhotos=true
+      }
+    addPhotoToGallery(){
+      this.photoService.addNewToGallery();
+      }
+    
+    
 
 }

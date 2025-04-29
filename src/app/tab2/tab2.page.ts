@@ -8,12 +8,17 @@ import { PhotoService } from "../services/photo.service";
   standalone: false,
 })
 export class Tab2Page {
-
+  showPhotos=false;
   constructor(public photoService:PhotoService) {}
+    
+  
     addPhotoToGallery(){
       this.photoService.addNewToGallery();
       
     }
+    mostrarPhotos() {
+      this.showPhotos=true
+      }
     async ngOnInit() {
       await this.photoService.loadSaved();
     }
