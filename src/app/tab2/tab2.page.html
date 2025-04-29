@@ -11,6 +11,9 @@
     <ion-row>
       <ion-col size="6" *ngFor="let photo of photoService.photos; index as position" >
         <ion-img [src]="photo.webviewPath"></ion-img>
+        <ion-card-content class="ion-text-center">
+          {{ photo.filepath | fileName }} 
+        </ion-card-content>
       </ion-col> 
     </ion-row>
   </ion-grid>
