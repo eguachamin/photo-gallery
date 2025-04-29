@@ -9,7 +9,8 @@
 <ion-content [fullscreen]="true">
 
   
-  <ion-button shape="round" (click)="mostrarPhotos()">Mostrar Fotos
+  <ion-button shape="round" (click)="mostrarPhotos()">
+    {{ showPhotos ? 'Ocultar Photos' : 'Mostrar Photos' }}
   </ion-button>
 
   <ion-grid *ngIf="showPhotos">

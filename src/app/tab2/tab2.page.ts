@@ -8,17 +8,17 @@ import { PhotoService } from "../services/photo.service";
   standalone: false,
 })
 export class Tab2Page {
-  showPhotos=false;
+  showPhotos=true;
   constructor(public photoService:PhotoService) {}
-    
-  
-    addPhotoToGallery(){
-      this.photoService.addNewToGallery();
-      
+    tomarFotoCalidadAlta() {
+      this.photoService.addNewToGallery(100); // calidad completa
+    }
+    tomarFotoCalidadMedia() {
+      this.photoService.addNewToGallery(50); // calidad 50%
     }
     mostrarPhotos() {
-      this.showPhotos=true
-      }
+      this.showPhotos=!this.showPhotos;
+    }
     async ngOnInit() {
       await this.photoService.loadSaved();
     }

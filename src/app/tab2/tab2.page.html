@@ -7,7 +7,15 @@
 </ion-header>
 
 <ion-content >
-  <ion-button shape="round" (click)="mostrarPhotos()">Mostrar Fotos
+  <ion-button shape="round" (click)="mostrarPhotos()">
+    {{ showPhotos ? 'Ocultar Photos' : 'Mostrar Photos' }}
+  </ion-button>
+  <ion-button expand="block" color="success" (click)="tomarFotoCalidadAlta()">
+    Tomar Foto (Calidad Alta)
+  </ion-button>
+  
+  <ion-button expand="block" color="warning" (click)="tomarFotoCalidadMedia()">
+    Tomar Foto (Calidad Media)
   </ion-button>
 
   <ion-grid *ngIf="showPhotos">
@@ -21,10 +29,4 @@
     </ion-row>
   </ion-grid>
 
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="addPhotoToGallery()">
-      <ion-icon name="camera">
-      </ion-icon>
-    </ion-fab-button>
-  </ion-fab> 
 </ion-content>

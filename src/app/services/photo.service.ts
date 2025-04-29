@@ -83,11 +83,11 @@ resolve(reader.result);
 reader.readAsDataURL(blob);
 });
 
-public async addNewToGallery(){
+public async addNewToGallery(quality:number=100){
 const capturedPhoto=await Camera.getPhoto({
 resultType:CameraResultType.Uri,
 source:CameraSource.Camera,
-quality:100
+quality: quality
   });
 
 const savedImageFile=await this.savePicture(capturedPhoto)
